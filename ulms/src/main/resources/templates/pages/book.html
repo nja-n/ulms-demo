@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Author</title></head>
+<body>
+<form th:action="@{/save/book}" method="post">
+	<input placeholder="title" name="title" type="text" required />
+	<input placeholder="isbn" name="isbn" type="text" required/>
+	<select name="genre" required>
+		<option value="">--genre--</option>
+		<option value="FICTION">FICTION</option>
+		<option value="SCIENCE">SCIENCE</option>
+		<option value="HISTORY">HISTORY</option>
+		<option value="FANTASY">FANTASY</option>
+		<option value="MYSTERY">MYSTERY</option>
+		<option value="BIOGRAPHY">BIOGRAPHY</option>
+		<option value="TECHNOLOGY">TECHNOLOGY</option>
+		<option value="TEXTBOOK">TEXTBOOK</option>
+	</select>
+	<input placeholder="publicationYear" name="publicationYear" type="number" required/>
+	<input placeholder="publisher" name="publisher" type="text" required/>
+	<input placeholder="totalCopies" name="totalCopies" type="number" required/>
+	<select name="author.id" required>
+		<option value="">--author--</option>
+		<option th:each="item : ${authers}"
+			th:value="${item.id}" th:text="${item.name}"></option>
+	</select>
+	<button type="submit">Submit</button>
+</form>
+</body>
+</html>

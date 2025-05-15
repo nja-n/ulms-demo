@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Author</title></head>
+<body>
+<form th:action="@{/save/author}" method="post">
+	<input placeholder="name" name="name" type="text" required />
+	<input placeholder="biography" name="biography" type="text" required/>
+	<input placeholder="birthDate" name="birthDate" type="date" required/>
+	<button type="submit">Submit</button>
+</form>
+</body>
+</html>
